@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
-
+import { Utensils } from 'lucide-react';
 export default function Header() {
     return (
         <nav className="bg-primary_brown text-primary_yellow py-4 px-3 shadow-lg">
             <div className="container mx-auto flex justify-between items-center px-4">
+            <Utensils className="text-primary_yellow" size={24} />
                 <Link
                     to="/"
                     className="text-2xl font-bold transition-transform duration-300 hover:scale-110 hover:text-white"
