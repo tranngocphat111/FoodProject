@@ -1,5 +1,6 @@
 import { Clock, MapPin, Star } from "lucide-react";
 import { Carousel } from "antd";
+import { Link } from "react-router-dom";
 export default function About() {
     return (
         <>
@@ -16,35 +17,45 @@ export default function About() {
                         chuẩn bị từng món ăn với sự tận tâm và tỉ mỉ.
                     </p>
                     <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
-                        <button className="px-6 py-3 bg-primary_yellow text-primary_brown font-semibold rounded-full hover:bg-opacity-90 transition-all">
-                            Liên hệ với chúng tôi ngay
-                        </button>
+                        <Link to="/contact">
+                            <button className="px-6 py-3 bg-primary_yellow text-primary_brown font-semibold rounded-full hover:bg-opacity-90 transition-all">
+                                Liên hệ với chúng tôi ngay
+                            </button>
+                        </Link>
                         <button className="px-6 py-3 border-2 border-primary_yellow text-primary_yellow rounded-full hover:bg-primary_yellow hover:text-primary_brown transition-all">
                             Xem thực đơn
                         </button>
                     </div>
                 </div>
                 <div>
-                    <Carousel arrows infinite={false}>
+                    <Carousel
+                        autoplay
+                        autoplaySpeed={1500}
+                        effect="fade"
+                        arrows
+                        infinite={true}
+                        className="shadow-2xl"
+                        dots={{ className: "custom-dots" }}
+                    >
                         <img
                             src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80"
                             alt="Delicious food plate"
-                            className="rounded-lg w-full h-[400px] object-cover shadow-lg"
+                            className="rounded-lg w-full h-[400px] object-cover shadow-lg transition-all duration-700 ease-in-out"
                         />
                         <img
-                            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80"
+                            src="https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?auto=format&fit=crop&q=80"
                             alt="Delicious food plate"
-                            className="rounded-lg w-full h-[400px] object-cover shadow-lg"
+                            className="rounded-lg w-full h-[400px] object-cover shadow-lg transition-all duration-700 ease-in-out"
                         />
                         <img
-                            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80"
+                            src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&q=80"
                             alt="Delicious food plate"
-                            className="rounded-lg w-full h-[400px] object-cover shadow-lg"
+                            className="rounded-lg w-full h-[400px] object-cover shadow-lg transition-all duration-700 ease-in-out"
                         />
                         <img
-                            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80"
+                            src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80"
                             alt="Delicious food plate"
-                            className="rounded-lg w-full h-[400px] object-cover shadow-lg"
+                            className="rounded-lg w-full h-[400px] object-cover shadow-lg transition-all duration-700 ease-in-out"
                         />
                     </Carousel>
                 </div>
