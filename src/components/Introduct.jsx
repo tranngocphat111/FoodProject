@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const images = [
   { id: 1, img: "/public/images/panner/pexels-cottonbro-3298633.jpg" },
@@ -22,13 +23,18 @@ export default function Introduct() {
             chinh phục cả những thực khách khó tính nhất.
           </p>
           <div className="flex space-x-4">
-            <button className="group relative px-8 py-4 bg-primary-yellow text-primary-brown rounded-full text-lg font-semibold overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,196,4,0.4)] bg-primary_yellow">
-              <span className="relative z-10 ">Khám phá ngay</span>
-              <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
-            </button>
-            <button className="px-8 py-4 border-2 border-primary_yellow text-primary_yellow rounded-full text-lg font-semibold hover:bg-primary-yellow hover:text-primary-brown transition-all duration-300">
-              Xem thêm
-            </button>
+            <Link to="/menu">
+              <button className="group relative px-8 py-4 bg-primary-yellow text-primary-brown rounded-full text-lg font-semibold overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,196,4,0.4)] bg-primary_yellow">
+                <span className="relative z-10 ">Khám phá ngay</span>
+                <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+              </button>
+            </Link>
+
+            <Link to="/about">
+              <button className="px-8 py-4 border-2 border-primary_yellow text-primary_yellow rounded-full text-lg font-semibold hover:bg-primary-yellow hover:text-primary-brown transition-all duration-300">
+                Xem thêm
+              </button>
+            </Link>
           </div>
         </div>
 

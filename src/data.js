@@ -1,203 +1,382 @@
-const data = [
+export const data = [
   {
     id: "m1",
     name: "Mì ống phô mai",
     price: "8.99",
-    description:
-      "Mì ống nấu chín hoàn hảo trộn với phô mai cheddar kem, phủ lớp vụn bánh mì giòn.",
-    detail_description:
-      "Món ăn kinh điển được chế biến từ mì ống được nấu chín vừa tới, trộn cùng sốt phô mai cheddar béo ngậy, tạo nên hương vị thơm ngon khó cưỡng. Bề mặt món ăn được phủ lớp vụn bánh mì giòn tan, giúp tăng thêm độ ngon miệng, tạo ra sự kết hợp hoàn hảo giữa mềm và giòn.",
+    description: "Mì ống nấu chín hoàn hảo trộn với phô mai cheddar kem, phủ lớp vụn bánh mì giòn.",
     image: "mac-and-cheese.jpg",
+    category: "Món Chính",
+    details: {
+      ingredients: ["Mì ống", "Phô mai cheddar", "Bơ", "Sữa", "Vụn bánh mì", "Muối", "Tiêu"],
+      nutritionalInfo: {
+        calories: "450 kcal",
+        protein: "18g",
+        carbohydrates: "45g",
+        fat: "22g"
+      },
+      preparationTime: "30 minutes",
+      servingSize: "2 people"
+    }
   },
   {
     id: "m2",
     name: "Pizza Margherita",
     price: "12.99",
-    description:
-      "Pizza cổ điển với mozzarella tươi, cà chua và húng quế trên đế mỏng và giòn.",
-    detail_description:
-      "Một chiếc pizza truyền thống của Ý với phần đế bánh mỏng giòn hoàn hảo. Lớp phô mai mozzarella tươi béo ngậy kết hợp với cà chua tươi chín mọng và húng quế thơm lừng, tạo nên hương vị cân bằng, tinh tế. Đây là món ăn mang đậm phong cách ẩm thực Napoli.",
+    description: "Pizza cổ điển với mozzarella tươi, cà chua và húng quế trên đế mỏng và giòn.",
     image: "margherita-pizza.jpg",
+    category: "Món Chính",
+    details: {
+      ingredients: ["Bột mì", "Nước", "Men", "Mozzarella", "Cà chua", "Húng quế", "Dầu ô liu"],
+      nutritionalInfo: {
+        calories: "800 kcal",
+        protein: "30g",
+        carbohydrates: "90g",
+        fat: "35g"
+      },
+      preparationTime: "45 minutes",
+      servingSize: "2 people"
+    }
   },
   {
     id: "m3",
     name: "Salad Caesar",
     price: "7.99",
-    description:
-      "Rau xà lách Romaine trộn với sốt Caesar, phủ croutons và lát parmesan.",
-    detail_description:
-      "Món salad tươi mát với rau xà lách Romaine giòn, kết hợp với nước sốt Caesar béo ngậy. Món ăn được điểm xuyết bởi những miếng bánh mì nướng croutons giòn rụm và phô mai parmesan lát mỏng, mang đến sự hòa quyện giữa vị bùi béo và độ tươi giòn.",
+    description: "Rau xà lách Romaine trộn với sốt Caesar, phủ croutons và lát parmesan.",
     image: "caesar-salad.jpg",
+    category: "Món phụ",
+    details: {
+      ingredients: ["Rau xà lách Romaine", "Sốt Caesar", "Croutons", "Parmesan", "Dầu ô liu", "Muối", "Tiêu"],
+      nutritionalInfo: {
+        calories: "280 kcal",
+        protein: "14g",
+        carbohydrates: "3g",
+        fat: "22g"
+      },
+      preparationTime: "15 minutes",
+      servingSize: "1 person"
+    }
   },
   {
     id: "m4",
     name: "Spaghetti Carbonara",
     price: "10.99",
-    description:
-      "Spaghetti al dente với sốt kem làm từ lòng đỏ trứng, phô mai pecorino, pancetta và tiêu.",
-    detail_description:
-      "Món mì spaghetti chuẩn phong cách Ý, với sợi mì al dente dai ngon kết hợp cùng sốt carbonara đậm đà. Sốt được chế biến từ lòng đỏ trứng, phô mai pecorino Romano hảo hạng, pancetta giòn tan và tiêu đen thơm nồng, tạo nên hương vị béo ngậy nhưng không ngấy.",
+    description: "Spaghetti al dente với sốt kem làm từ lòng đỏ trứng, phô mai pecorino, pancetta và tiêu.",
     image: "spaghetti-carbonara.jpg",
+    category: "Món Chính",
+    details: {
+      ingredients: ["Spaghetti", "Lòng đỏ trứng", "Pecorino", "Pancetta", "Tiêu", "Muối", "Dầu ô liu"],
+      nutritionalInfo: {
+        calories: "600 kcal",
+        protein: "25g",
+        carbohydrates: "70g",
+        fat: "30g"
+      },
+      preparationTime: "25 minutes",
+      servingSize: "2 people"
+    }
   },
   {
     id: "m5",
     name: "Burger chay",
     price: "9.99",
-    description:
-      "Miếng chay mọng nước phục vụ trên bánh mì nguyên cám với rau xà lách, cà chua và sốt chua ngọt.",
-    detail_description:
-      "Một lựa chọn hoàn hảo cho những ai yêu thích món ăn chay nhưng vẫn đảm bảo đầy đủ hương vị. Burger được làm từ nguyên liệu thực vật, mọng nước và thơm ngon, kết hợp với bánh mì nguyên cám, rau xà lách tươi, cà chua thái lát và sốt chua ngọt, mang đến trải nghiệm ẩm thực đầy đủ dinh dưỡng và hấp dẫn.",
+    description: "Miếng chay mọng nước phục vụ trên bánh mì nguyên cám với rau xà lách, cà chua và sốt chua ngọt.",
     image: "veggie-burger.jpg",
+    category: "Món Chính",
+    details: {
+      ingredients: ["Miếng chay", "Bánh mì nguyên cám", "Rau xà lách", "Cà chua", "Sốt chua ngọt", "Dầu ô liu", "Muối", "Tiêu"],
+      nutritionalInfo: {
+        calories: "350 kcal",
+        protein: "15g",
+        carbohydrates: "40g",
+        fat: "12g"
+      },
+      preparationTime: "20 minutes",
+      servingSize: "1 person"
+    }
   },
   {
     id: "m6",
     name: "Sandwich gà nướng",
     price: "10.99",
-    description:
-      "Ức gà nướng mềm với bơ, thịt xông khói, rau xà lách và sốt mật ong mù tạt trên bánh mì nướng.",
-    detail_description:
-      "Món sandwich thơm ngon với phần ức gà nướng mềm, được tẩm ướp đậm đà, kết hợp cùng thịt xông khói giòn rụm và sốt mật ong mù tạt thơm nồng. Tất cả được kẹp trong lớp bánh mì nướng giòn rụm, mang lại trải nghiệm ẩm thực tuyệt vời.",
+    description: "Ức gà nướng mềm với bơ, thịt xông khói, rau xà lách và sốt mật ong mù tạt trên bánh mì nướng.",
     image: "grilled-chicken-sandwich.jpg",
+    category: "Món Chính",
+    details: {
+      ingredients: ["Ức gà", "Bơ", "Thịt xông khói", "Rau xà lách", "Sốt mật ong mù tạt", "Bánh mì nướng", "Muối", "Tiêu"],
+      nutritionalInfo: {
+        calories: "500 kcal",
+        protein: "35g",
+        carbohydrates: "30g",
+        fat: "25g"
+      },
+      preparationTime: "20 minutes",
+      servingSize: "1 person"
+    }
   },
   {
     id: "m7",
     name: "Bít tết kèm khoai tây chiên",
     price: "17.99",
-    description:
-      "Bít tết mọng nước nấu theo sở thích của bạn, phục vụ cùng khoai tây chiên vàng giòn và bơ thảo mộc.",
-    detail_description:
-      "Bít tết cao cấp được chế biến theo sở thích của bạn, từ tái đến chín kỹ, giúp giữ được độ mềm và vị ngọt tự nhiên. Món ăn đi kèm với khoai tây chiên vàng giòn và bơ thảo mộc, tạo nên sự kết hợp hảo hạng giữa hương vị thơm ngon và độ béo vừa phải.",
+    description: "Bít tết mọng nước nấu theo sở thích của bạn, phục vụ cùng khoai tây chiên vàng giòn và bơ thảo mộc.",
     image: "steak-frites.jpg",
+    category: "Món Chính",
+    details: {
+      ingredients: ["Bít tết", "Khoai tây", "Bơ thảo mộc", "Muối", "Tiêu", "Dầu ô liu"],
+      nutritionalInfo: {
+        calories: "700 kcal",
+        protein: "50g",
+        carbohydrates: "40g",
+        fat: "40g"
+      },
+      preparationTime: "30 minutes",
+      servingSize: "1 person"
+    }
   },
   {
     id: "m8",
     name: "Đĩa sushi tổng hợp",
     price: "15.99",
-    description:
-      "Một loạt sushi tươi bao gồm California, cá ngừ cay và lươn bơ.",
-    detail_description:
-      "Món sushi tổng hợp đầy hấp dẫn với nhiều loại cuộn sushi tươi ngon. Từ cuộn California cuốn nhẹ với thanh cua và bơ, đến sushi cá ngừ cay đậm đà hay sushi lươn bơ thơm béo. Một trải nghiệm ẩm thực Nhật Bản đầy tinh tế và phong phú.",
+    description: "Một loạt sushi tươi bao gồm California, cá ngừ cay và lươn bơ.",
     image: "sushi-roll-platter.jpg",
+    category: "Món Chính",
+    details: {
+      ingredients: ["Cơm sushi", "Cá ngừ", "Lươn", "Bơ", "Rong biển", "Dưa leo", "Sốt mayonnaise"],
+      nutritionalInfo: {
+        calories: "600 kcal",
+        protein: "30g",
+        carbohydrates: "70g",
+        fat: "20g"
+      },
+      preparationTime: "40 minutes",
+      servingSize: "2 people"
+    }
   },
   {
     id: "m9",
     name: "Cà ri gà",
     price: "13.99",
-    description:
-      "Miếng gà mềm nấu trong sốt cà ri đậm đà và thơm, phục vụ cùng cơm basmati.",
-    detail_description:
-      "Món cà ri gà hấp dẫn với miếng gà mềm, thấm đẫm trong sốt cà ri thơm nồng, được chế biến với nhiều loại gia vị đặc trưng. Món ăn được phục vụ kèm cơm basmati dẻo thơm, mang đến trải nghiệm ẩm thực Ấn Độ truyền thống và tinh tế.",
+    description: "Miếng gà mềm nấu trong sốt cà ri đậm đà và thơm, phục vụ cùng cơm basmati.",
     image: "chicken-curry.jpg",
+    category: "Món Chính",
+    details: {
+      ingredients: ["Gà", "Sốt cà ri", "Cơm basmati", "Hành tây", "Tỏi", "Gừng", "Cà chua", "Sữa dừa"],
+      nutritionalInfo: {
+        calories: "500 kcal",
+        protein: "35g",
+        carbohydrates: "40g",
+        fat: "20g"
+      },
+      preparationTime: "45 minutes",
+      servingSize: "2 people"
+    }
   },
   {
     id: "m10",
     name: "Bát Buddha chay",
     price: "11.99",
     description: "Bát đầy đủ với quinoa, rau nướng, bơ và sốt tahini.",
-    detail_description:
-      "Một lựa chọn lành mạnh và đầy màu sắc với quinoa mềm dẻo, rau củ nướng thơm lừng như bí đỏ, ớt chuông, bông cải xanh, cùng với những lát bơ béo ngậy. Tất cả được kết hợp với sốt tahini đậm đà, mang lại hương vị hài hòa và dinh dưỡng cân bằng.",
     image: "vegan-buddha-bowl.jpg",
+    category: "Món Chính",
+    details: {
+      ingredients: ["Quinoa", "Rau nướng", "Bơ", "Sốt tahini", "Dầu ô liu", "Muối", "Tiêu"],
+      nutritionalInfo: {
+        calories: "400 kcal",
+        protein: "15g",
+        carbohydrates: "50g",
+        fat: "15g"
+      },
+      preparationTime: "30 minutes",
+      servingSize: "1 person"
+    }
   },
   {
     id: "m11",
     name: "Paella hải sản",
     price: "19.99",
-    description:
-      "Món ăn Tây Ban Nha với cơm nhuộm nghệ tây, tôm, trai và xúc xích chorizo.",
-    detail_description:
-      "Một món ăn đặc trưng của Tây Ban Nha, paella hải sản là sự hòa quyện của cơm nấu với nghệ tây vàng óng, hải sản tươi như tôm, trai, mực cùng xúc xích chorizo cay nồng. Hương thơm từ ớt chuông, đậu Hà Lan và nước dùng đậm đà tạo nên hương vị tuyệt vời, khó quên.",
+    description: "Món ăn Tây Ban Nha với cơm nhuộm nghệ tây, tôm, trai và xúc xích chorizo.",
     image: "seafood-paella.jpg",
+    category: "Món Chính",
+    details: {
+      ingredients: ["Cơm", "Tôm", "Trai", "Xúc xích chorizo", "Nghệ tây", "Hành tây", "Tỏi", "Cà chua"],
+      nutritionalInfo: {
+        calories: "700 kcal",
+        protein: "40g",
+        carbohydrates: "80g",
+        fat: "25g"
+      },
+      preparationTime: "50 minutes",
+      servingSize: "2 people"
+    }
   },
   {
     id: "m12",
     name: "Bánh pancake xếp chồng",
     price: "8.99",
-    description:
-      "Bánh pancake mềm xếp chồng cao, rưới siro cây phong và phủ quả mọng tươi.",
-    detail_description:
-      "Những lớp bánh pancake vàng ươm, mềm mịn được xếp cao, rưới lớp siro cây phong ngọt ngào. Mỗi miếng bánh tan trong miệng, hòa quyện cùng vị tươi mát của quả việt quất, dâu tây, mâm xôi, tạo nên một món tráng miệng hấp dẫn.",
+    description: "Bánh pancake mềm xếp chồng cao, rưới siro cây phong và phủ quả mọng tươi.",
     image: "pancake-stack.jpg",
+    category: "Món Tráng Miệng",
+    details: {
+      ingredients: ["Bột mì", "Sữa", "Trứng", "Bơ", "Siro cây phong", "Quả mọng", "Muối", "Đường"],
+      nutritionalInfo: {
+        calories: "400 kcal",
+        protein: "10g",
+        carbohydrates: "60g",
+        fat: "15g"
+      },
+      preparationTime: "20 minutes",
+      servingSize: "2 people"
+    }
   },
   {
     id: "m13",
     name: "Mì ramen miso",
     price: "12.99",
-    description:
-      "Bát mì ramen ấm áp với nước dùng miso, thịt heo mềm, trứng luộc lòng đào và hành lá.",
-    detail_description:
-      "Bát mì ramen thơm lừng với nước dùng miso đậm đà, hòa quyện với sợi mì dai ngon. Thịt heo chashu mềm tan, trứng luộc lòng đào béo ngậy, rong biển nori và hành lá tạo nên sự kết hợp tuyệt vời của hương vị Nhật Bản truyền thống.",
+    description: "Bát mì ramen ấm áp với nước dùng miso, thịt heo mềm, trứng luộc lòng đào và hành lá.",
     image: "miso-ramen.jpg",
+    category: "Món Chính",
+    details: {
+      ingredients: ["Mì ramen", "Nước dùng miso", "Thịt heo", "Trứng", "Hành lá", "Rong biển", "Muối", "Tiêu"],
+      nutritionalInfo: {
+        calories: "600 kcal",
+        protein: "30g",
+        carbohydrates: "70g",
+        fat: "20g"
+      },
+      preparationTime: "30 minutes",
+      servingSize: "1 person"
+    }
   },
   {
     id: "m14",
     name: "Tacos bò",
     price: "9.99",
-    description:
-      "Ba bánh tortilla mềm chứa thịt bò gia vị, salsa tươi, phô mai và kem chua.",
-    detail_description:
-      "Những chiếc bánh tortilla mềm dai bọc lấy phần thịt bò ướp gia vị đậm đà, kết hợp với salsa cà chua tươi, phô mai cheddar béo ngậy và lớp kem chua mát lạnh. Một món ăn Mexico hấp dẫn với hương vị bùng nổ trong từng miếng cắn.",
+    description: "Ba bánh tortilla mềm chứa thịt bò gia vị, salsa tươi, phô mai và kem chua.",
     image: "beef-tacos.jpg",
+    category: "Món Chính",
+    details: {
+      ingredients: ["Thịt bò", "Bánh tortilla", "Salsa", "Phô mai", "Kem chua", "Hành tây", "Rau xà lách", "Cà chua"],
+      nutritionalInfo: {
+        calories: "500 kcal",
+        protein: "25g",
+        carbohydrates: "40g",
+        fat: "25g"
+      },
+      preparationTime: "25 minutes",
+      servingSize: "2 people"
+    }
   },
   {
     id: "m15",
     name: "Bánh brownie sô cô la",
     price: "5.99",
-    description:
-      "Bánh brownie đậm đà và mềm mịn, phủ một viên kem vani và sốt sô cô la.",
-    detail_description:
-      "Bánh brownie mềm ẩm, với lớp vỏ giòn nhẹ và phần ruột sô cô la đậm đà, tan chảy trong miệng. Kết hợp cùng viên kem vani mát lạnh và sốt sô cô la đắng nhẹ, tạo nên một món tráng miệng thơm ngon khó cưỡng.",
+    description: "Bánh brownie đậm đà và mềm mịn, phủ một viên kem vani và sốt sô cô la.",
     image: "chocolate-brownie.jpg",
+    category: "Món Tráng Miệng",
+    details: {
+      ingredients: ["Sô cô la", "Bơ", "Đường", "Trứng", "Bột mì", "Kem vani", "Sốt sô cô la", "Muối"],
+      nutritionalInfo: {
+        calories: "400 kcal",
+        protein: "5g",
+        carbohydrates: "50g",
+        fat: "20g"
+      },
+      preparationTime: "30 minutes",
+      servingSize: "1 person"
+    }
   },
   {
     id: "m16",
     name: "Súp tôm hùm",
     price: "14.99",
-    description:
-      "Súp kem làm từ nước dùng tôm hùm, rau thơm và một chút rượu brandy.",
-    detail_description:
-      "Súp kem tôm hùm thơm béo, nấu từ nước dùng hải sản đậm đà, hòa quyện cùng kem tươi và chút rượu brandy tinh tế. Tôm hùm tươi, rau thơm và gia vị đặc biệt tạo nên một món ăn sang trọng, tinh tế.",
+    description: "Súp kem làm từ nước dùng tôm hùm, rau thơm và một chút rượu brandy.",
     image: "lobster-bisque.jpg",
+    category: "Món phụ",
+    details: {
+      ingredients: ["Tôm hùm", "Nước dùng tôm hùm", "Rau thơm", "Rượu brandy", "Kem", "Bơ", "Muối", "Tiêu"],
+      nutritionalInfo: {
+        calories: "300 kcal",
+        protein: "20g",
+        carbohydrates: "10g",
+        fat: "20g"
+      },
+      preparationTime: "40 minutes",
+      servingSize: "1 person"
+    }
   },
   {
     id: "m17",
     name: "Cơm risotto nấm",
     price: "13.99",
-    description:
-      "Cơm Arborio kem nấu với hỗn hợp nấm rừng và hoàn thiện với phô mai parmesan.",
-    detail_description:
-      "Cơm Arborio được nấu chậm với nước dùng rau củ, kết hợp cùng nấm rừng thơm ngon và phô mai parmesan tan chảy. Hương vị béo ngậy, kết cấu kem mịn cùng hương thơm nhẹ nhàng của nấm làm món ăn này trở thành một lựa chọn hoàn hảo cho những ai yêu thích ẩm thực Ý.",
+    description: "Cơm Arborio kem nấu với hỗn hợp nấm rừng và hoàn thiện với phô mai parmesan.",
     image: "mushroom-risotto.jpg",
+    category: "Món Chính",
+    details: {
+      ingredients: ["Cơm Arborio", "Nấm rừng", "Parmesan", "Hành tây", "Tỏi", "Rượu vang trắng", "Bơ", "Muối", "Tiêu"],
+      nutritionalInfo: {
+        calories: "500 kcal",
+        protein: "15g",
+        carbohydrates: "60g",
+        fat: "20g"
+      },
+      preparationTime: "35 minutes",
+      servingSize: "2 people"
+    }
   },
   {
     id: "m18",
     name: "Cà tím Parmesan",
     price: "11.99",
-    description:
-      "Lớp cà tím tẩm bột chiên, sốt marinara và phô mai mozzarella cùng parmesan tan chảy.",
-    detail_description:
-      "Cà tím được tẩm bột chiên giòn rụm, phủ sốt marinara cà chua đậm đà, xen kẽ các lớp phô mai mozzarella kéo sợi và parmesan béo ngậy. Món ăn mang đậm phong cách Ý này có hương vị hấp dẫn, làm say đắm cả những thực khách khó tính nhất.",
+    description: "Lớp cà tím tẩm bột chiên, sốt marinara và phô mai mozzarella cùng parmesan tan chảy.",
     image: "eggplant-parmesan.jpg",
+    category: "Món Chính",
+    details: {
+      ingredients: ["Cà tím", "Bột", "Sốt marinara", "Mozzarella", "Parmesan", "Dầu ô liu", "Muối", "Tiêu"],
+      nutritionalInfo: {
+        calories: "400 kcal",
+        protein: "15g",
+        carbohydrates: "30g",
+        fat: "20g"
+      },
+      preparationTime: "40 minutes",
+      servingSize: "2 people"
+    }
   },
   {
     id: "m19",
     name: "Bánh cheesecake chanh",
     price: "6.99",
-    description:
-      "Bánh cheesecake kem với hương chanh tangy, phục vụ trên đế bánh quy giòn.",
-    detail_description:
-      "Chiếc bánh cheesecake mềm mịn, hòa quyện giữa vị kem béo và hương chanh tươi mát. Đế bánh quy giòn tan, tạo độ cân bằng hoàn hảo giữa vị ngọt và chua nhẹ, khiến món tráng miệng này trở nên khó cưỡng.",
+    description: "Bánh cheesecake kem với hương chanh tangy, phục vụ trên đế bánh quy giòn.",
     image: "lemon-cheesecake.jpg",
+    category: "Món Tráng Miệng",
+    details: {
+      ingredients: ["Phô mai cream cheese", "Đường", "Trứng", "Chanh", "Bánh quy", "Bơ", "Muối"],
+      nutritionalInfo: {
+        calories: "350 kcal",
+        protein: "8g",
+        carbohydrates: "30g",
+        fat: "20g"
+      },
+      preparationTime: "50 minutes",
+      servingSize: "1 person"
+    }
   },
   {
     id: "m20",
     name: "Wrap falafel",
     price: "8.99",
-    description:
-      "Falafel giòn bọc trong bánh pita ấm với rau xà lách, cà chua và sốt tahini.",
-    detail_description:
-      "Những viên falafel chiên giòn, làm từ đậu gà và rau mùi thơm lừng, được bọc trong lớp bánh pita mềm dai. Kết hợp với rau xà lách tươi mát, cà chua mọng nước và sốt tahini béo ngậy, tạo nên một món ăn chay đầy hương vị Trung Đông.",
+    description: "Falafel giòn bọc trong bánh pita ấm với rau xà lách, cà chua và sốt tahini.",
     image: "falafel-wrap.jpg",
-  },
+    category: "Món Chính",
+    details: {
+      ingredients: ["Falafel", "Bánh pita", "Rau xà lách", "Cà chua", "Sốt tahini", "Dầu ô liu", "Muối", "Tiêu"],
+      nutritionalInfo: {
+        calories: "400 kcal",
+        protein: "15g",
+        carbohydrates: "40g",
+        fat: "15g"
+      },
+      preparationTime: "20 minutes",
+      servingSize: "1 person"
+    }
+  }
 ];
-
-export default data;
