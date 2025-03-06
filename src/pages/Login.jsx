@@ -1,17 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Mail, Lock, LogIn, Loader2 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
+const users = [
+  { email: "thai@gmail.com", password: "12345" },
+  { email: "phat@gmail.com", password: "12345" },
+  { email: "nghi@gmail.com", password: "12345" },
+];
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const emailRef = useRef();
+  const passwordRef = useRef();
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    console.log("Login attempt:", { email, password });
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+
+    const user = users.find(
+      (user) => user.email === email && user.password === password
+    );
+
+    if (user) {
+      console.log("Login successful", { email });
+      localStorage.setItem("user", JSON.stringify(user));
+      navigate("/");
+      window.location.reload();
+    } else {
+      alert("Sai email hoặc mật khẩu!");
+    }
+
     setIsLoading(false);
   };
 
@@ -55,12 +76,13 @@ function Login() {
                 Email
               </label>
               <div className="relative group">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5 
-                  transition-colors group-hover:text-primary_yellow group-hover:scale-110 duration-300" />
+                <Mail
+                  className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5 
+                  transition-colors group-hover:text-primary_yellow group-hover:scale-110 duration-300"
+                />
                 <input
                   type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  ref={emailRef}
                   className="w-full pl-10 pr-4 py-3 bg-primary_brown/60 border border-gray-700 rounded-lg 
                     focus:ring-2 focus:ring-primary_yellow focus:border-transparent text-gray-200 
                     placeholder-gray-500 transition-all duration-300 ease-in-out
@@ -69,8 +91,10 @@ function Login() {
                   placeholder="Nhập email của bạn"
                   required
                 />
-                <div className="absolute inset-0 rounded-lg bg-primary_yellow/5 opacity-0 group-hover:opacity-100 
-                  transition-opacity duration-300 pointer-events-none"></div>
+                <div
+                  className="absolute inset-0 rounded-lg bg-primary_yellow/5 opacity-0 group-hover:opacity-100 
+                  transition-opacity duration-300 pointer-events-none"
+                ></div>
               </div>
             </div>
 
@@ -79,12 +103,13 @@ function Login() {
                 Mật khẩu
               </label>
               <div className="relative group">
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5 
-                  transition-colors group-hover:text-primary_yellow group-hover:scale-110 duration-300" />
+                <Lock
+                  className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5 
+                  transition-colors group-hover:text-primary_yellow group-hover:scale-110 duration-300"
+                />
                 <input
                   type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  ref={passwordRef}
                   className="w-full pl-10 pr-4 py-3 bg-primary_brown/60 border border-gray-700 rounded-lg 
                     focus:ring-2 focus:ring-primary_yellow focus:border-transparent text-gray-200 
                     placeholder-gray-500 transition-all duration-300 ease-in-out
@@ -93,8 +118,10 @@ function Login() {
                   placeholder="Nhập mật khẩu của bạn"
                   required
                 />
-                <div className="absolute inset-0 rounded-lg bg-primary_yellow/5 opacity-0 group-hover:opacity-100 
-                  transition-opacity duration-300 pointer-events-none"></div>
+                <div
+                  className="absolute inset-0 rounded-lg bg-primary_yellow/5 opacity-0 group-hover:opacity-100 
+                  transition-opacity duration-300 pointer-events-none"
+                ></div>
               </div>
             </div>
 
@@ -136,7 +163,11 @@ function Login() {
                 before:origin-right before:transition-transform before:duration-300
                 hover:before:scale-x-100 hover:before:origin-left"
             >
-              <span className={`inline-flex items-center transition-all duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+              <span
+                className={`inline-flex items-center transition-all duration-300 ${
+                  isLoading ? "opacity-0" : "opacity-100"
+                }`}
+              >
                 Đăng nhập
               </span>
               {isLoading && (
