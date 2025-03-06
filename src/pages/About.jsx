@@ -22,9 +22,11 @@ export default function About() {
                                 Liên hệ với chúng tôi ngay
                             </button>
                         </Link>
-                        <button className="px-6 py-3 border-2 border-primary_yellow text-primary_yellow rounded-full hover:bg-primary_yellow hover:text-primary_brown transition-all">
-                            Xem thực đơn
-                        </button>
+                        <Link to="/menu">
+                            <button className="px-6 py-3 border-2 border-primary_yellow text-primary_yellow rounded-full hover:bg-primary_yellow hover:text-primary_brown transition-all">
+                                Xem thực đơn
+                            </button>
+                        </Link>
                     </div>
                 </div>
                 <div>
