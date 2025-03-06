@@ -2,7 +2,7 @@ export default function Meal({ meal }) {
   return (
     <div className="bg-[#1d1a16] shadow-lg rounded-2xl overflow-hidden cus max-w-sm mx-auto transform transition duration-300 cursor-pointer hover:scale-105 hover:shadow-[#ffc404]"> 
       <img
-        src={`/public/images/${meal.image}`}
+        src={`/public/images/meals/${meal.image}`}
         alt={meal.id}
         className="w-full h-80 object-cover"
       />
