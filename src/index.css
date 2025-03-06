@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-<<<<<<< HEAD
+
 
 @keyframes fadeIn {
     from {
@@ -34,7 +34,7 @@
     animation: slideUp 1s ease-out 0.3s forwards;
     opacity: 0;
   }
-=======
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -116,4 +116,3 @@
     opacity: .5;
   }
 }
->>>>>>> ed3de17d208f3b1f9f59841372a0b5f1e058d072
