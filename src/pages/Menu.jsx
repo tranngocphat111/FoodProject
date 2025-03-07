@@ -22,7 +22,7 @@ function Menu() {
 
   return (
     <div className="w-[80%] p-4 mx-auto">
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-12 mt-14">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-primary_yellow mb-4">
             Thực Đơn Của Chúng Tôi

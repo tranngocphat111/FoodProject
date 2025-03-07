@@ -12,7 +12,7 @@ export default function Introduct() {
     <section className="bg-gradient-primary text-primary-brown min-h-screen flex items-center justify-center overflow-hidden">
       <div className="max-w-7xl w-full px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-20">
         <div className="space-y-8 animate-fade-in">
-          <h1 className="text-5xl lg:text-7xl font-bold text-primary_yellow leading-tight transform hover:scale-105 transition-transform duration-300">
+          <h1 className="text-5xl lg:text-7xl font-bold text-primary_yellow leading-tight transform hover:scale-105 transition-transform duration-300 drop-shadow-default">
             Chào mừng đến
             <span className="block mt-2"> Amazing Food</span>
           </h1>
@@ -40,14 +40,14 @@ export default function Introduct() {
 
         <div className="grid grid-cols-2 gap-4 transform hover:scale-[1.02] transition-transform duration-500">
           <div className="space-y-4">
-            <div className="overflow-hidden rounded-2xl shadow-[#ffc404] ">
+            <div className="overflow-hidden rounded-2xl shadow-md shadow-[#ffc404]">
               <img
                 src={images[0].img}
                 alt={images[0].alt}
-                className="w-full h-[200px] object-cover transform hover:scale-110 transition-transform duration-700"
+                className="w-full h-[200px] object-cover transform  hover:scale-110 transition-transform duration-700  "
               />
             </div>
-            <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-primary_yellow/50">
+            <div className="overflow-hidden rounded-2xl shadow-md shadow-[#ffc404]">
               <img
                 src={images[2].img}
                 alt={images[2].alt}
@@ -55,7 +55,7 @@ export default function Introduct() {
               />
             </div>
           </div>
-          <div className="overflow-hidden rounded-2xl shadow-lg hover:shadow-primary_yellow/50">
+          <div className="overflow-hidden rounded-2xl shadow-md shadow-[#ffc404]">
             <img
               src={images[1].img}
               alt={images[1].alt}

@@ -17,7 +17,11 @@ export default {
       backgroundImage: {
         primary_linear: "linear-gradient(#29251c, #2c2306)",
       },
+      dropShadow: {
+        default: "8px 6px 4px #050504",
+      },
     },
+
   },
   plugins: [],
 };

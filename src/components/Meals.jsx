@@ -6,8 +6,8 @@ export default function Meals({ meals, max, isTitle }) {
     <>
       {isTitle && (
         <div className="relative group w-fit">
-          <h1 className="text-[42px] font-extrabold text-left text-primary_yellow relative uppercase">
-            <span className="relative z-10 drop-shadow-lg">
+          <h1 className="text-[42px] font-bold text-left text-primary_yellow relative uppercase ">
+            <span className="relative z-10  drop-shadow-default">
               Danh sách bán chạy
             </span>
             <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-primary_yellow rounded-full shadow-md transition-all duration-500 ease-in-out group-hover:w-full"></span>
@@ -15,20 +15,12 @@ export default function Meals({ meals, max, isTitle }) {
         </div>
       )}
 
-      <section className="py-5 ">
+      <section className="py-5 mb-10">
         <div className="w-full p-4 mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
             {meals.map((meal, index) => {
               if (index < max) {
-                return (
-                  <Link
-                    to={`/MealDetail/${meal.id}`}
-                    key={meal.id}
-                    className="bg-[#1d1a16] rounded-lg overflow-hidden shadow-lg hover:transform hover:scale-105 transition-transform duration-300 hover:shadow-[#ffc404] cursor-pointer"
-                  >
-                    <Meal meal={meal} />
-                  </Link>
-                );
+                return <Meal meal={meal} />;
               }
             })}
           </div>
