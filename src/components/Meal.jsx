@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import CartIcon from "../assets/icons/cart.png";
 export default function Meal({ meal }) {
   return (
-    <div className="bg-[#1d1a16] flex flex-col justify-center items-center shadow-lg rounded-2xl overflow-hidden  max-w-sm mx-auto transform transition duration-300 cursor-pointer hover:scale-105 hover:shadow-[#ffc404]">
-      <Link to={`/MealDetail/${meal.id}`} key={meal.id}>
+    <div className="bg-[#1d1a16]  shadow-lg rounded-2xl overflow-hidden  max-w-sm mx-auto transform transition duration-300 cursor-pointer hover:scale-105 hover:shadow-[#ffc404]">
+      <Link to={`/MealDetail/${meal.id}`} key={meal.id} className="flex flex-col justify-center items-center">
         <img
           src={`/public/images/meals/${meal.image}`}
           alt={meal.id}
@@ -17,12 +17,15 @@ export default function Meal({ meal }) {
 
           <p className="text-stone-200 text-[15px] mt-2">{meal.description}</p>
         </div>
+        <button className="px-7 py-2.5  my-4 mb-6 bg-[#ffc404] text-[#312c1d] font-semibold rounded-md transition-all duration-300 hover:bg-white hover:text-[#312c1d] hover:shadow-xl">
+          <img
+            src={CartIcon}
+            alt="cartitem"
+            className="h-6 inline-block mr-2"
+          />
+          Mua ngay
+        </button>
       </Link>
-
-      <button className="w-[240px] px-7 py-2.5  my-4 mb-6 bg-[#ffc404] text-[#312c1d] font-semibold rounded-md transition-all duration-300 hover:bg-white hover:text-[#312c1d] hover:shadow-xl">
-        <img src={CartIcon} alt="cartitem" className="h-6 inline-block mr-2" />
-        Mua ngay
-      </button>
     </div>
   );
 }
