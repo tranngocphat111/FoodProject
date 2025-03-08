@@ -5,7 +5,7 @@ export default function Meal({ meal }) {
     <div className="bg-[#1d1a16]  shadow-lg rounded-2xl overflow-hidden  max-w-sm mx-auto transform transition duration-300 cursor-pointer hover:scale-105 hover:shadow-[#ffc404]">
       <Link to={`/MealDetail/${meal.id}`} key={meal.id} className="flex flex-col justify-center items-center">
         <img
-          src={`/public/images/meals/${meal.image}`}
+          src={"/beef-tacos.jpg"}
           alt={meal.id}
           className="w-full h-80 object-cover"
         />
