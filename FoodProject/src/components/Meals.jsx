@@ -20,7 +20,7 @@ export default function Meals({ meals, max, isTitle }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
             {meals.map((meal, index) => {
               if (index < max) {
-                return <Meal meal={meal} />;
+                return <Meal meal={meal} key={meal.id} />;
               }
             })}
           </div>

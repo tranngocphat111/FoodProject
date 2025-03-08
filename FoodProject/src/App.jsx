@@ -7,21 +7,26 @@ import Login from "./pages/Login";
 import Footer from "./components/Footer";
 import Menu from "./pages/Menu";
 import MealDetial from "./pages/MealDetail";
+import Cart from "./components/Cart";
+import CartProvider from "./store/CartContext";
 
 function App() {
     return (
-        <Router>
-            <Header />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/menu" element={<Menu />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/MealDetail/:id" element={<MealDetial />} />
-            </Routes>
-            <Footer />
-        </Router>
+        <CartProvider>
+            <Router>
+                <Header />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/menu" element={<Menu />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/MealDetail/:id" element={<MealDetial />} />
+                    <Route path="/cart" element={<Cart />} />
+                </Routes>
+                <Footer />
+            </Router>
+        </CartProvider>
     );
 }
 
