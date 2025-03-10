@@ -7,13 +7,17 @@ import TopReviews from "../components/TopReviews";
 
 export default function Home() {
   return (
-    <div className="container mx-auto">
+    <div className="mx-auto">
       <div className="flex justify-center flex-col items-center ">
         <Introduct />
+      </div>
+      <BestSeller />
+      <Highlights />
+
+      <div className="flex justify-center flex-col items-center ">
         <Meals meals={data} max={6} isTitle={true}/>
       </div>
-      <Highlights />
-      <BestSeller />
+      
       <TopReviews />
     </div>
   );

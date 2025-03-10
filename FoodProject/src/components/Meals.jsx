@@ -5,7 +5,7 @@ export default function Meals({ meals, max, isTitle }) {
   return (
     <>
       {isTitle && (
-        <div className="relative group w-fit">
+        <div className="relative group w-fit mt-10  ">
           <h1 className="text-[42px] font-bold text-left text-primary_yellow relative uppercase ">
             <span className="relative z-10  drop-shadow-default">
               Danh sách bán chạy
